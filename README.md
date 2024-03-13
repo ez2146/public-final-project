@@ -19,12 +19,13 @@ The application will store Users, Lists and Items
 
 An Example User:
 
-```javascript
+
 {
   name: "john smith",
   email: "johnsmith@gmail.com" 
   message: "hello ethan"
 }
+
 
 ## [Link to Commented First Draft Schema](db.mjs) 
 
