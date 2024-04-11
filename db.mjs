@@ -1,6 +1,8 @@
-import mongoose from 'mongoose'
+import mongoose from 'mongoose';
 
-const userSchema = new Schema({
+mongoose.connect(process.env.DSN);
+
+const userSchema = new mongoose.Schema({
     name: {type: String, required: true},
     email: {type: String, required: true},
     message: {type: String, required: true}
