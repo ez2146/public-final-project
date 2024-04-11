@@ -11,4 +11,9 @@ const userSchema = new mongoose.Schema({
   
   const User = mongoose.model('User', userSchema);
 
-  export {User};
+
+  const connectDB = async () => {
+    await mongoose.connect(process.env.DSN);
+  };
+  
+  export { connectDB, User };
