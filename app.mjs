@@ -31,10 +31,10 @@ app.set('views', path.join(__dirname, 'views'));
 
 
 app.get('/', (req, res) => {
-  res.render('form'); // Render the form.ejs file
+  res.render('form');
 });
 
-app.post('/', async (req, res) => {
+app.post('/sendemail', async (req, res) => {
   try {
     const { name, email, message } = req.body;
     const user = new User({ name, email, message });
@@ -45,6 +45,19 @@ app.post('/', async (req, res) => {
   }
 });
 
+app.get("/sendemail", async (req, res) => {
+    try {
+        const users = await User.find(); 
+        if (users.length === 0) {
+            // no entries found
+            return res.status(404).json({ message: 'No room join entries found' });
+        }
+        res.status(200).json(users);  // sends list of room join entries as JSON
+    } catch (error) {
+        console.error('Error retrieving room join entries:', error);
+        res.status(500).json({ message: 'Internal server error' });
+    }
+});
 
 app.listen(process.env.PORT ?? 3000);
 
@@ -66,3 +79,6 @@ Refactor my directory:
 3) Create a "contactForm.js"
 4)Learn more about JSX & Material UI
 */
+
+//ez2146: linserv1.cims.nyu.edu... port 16711
+//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
