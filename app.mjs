@@ -47,3 +47,22 @@ app.post('/', async (req, res) => {
 
 
 app.listen(process.env.PORT ?? 3000);
+
+/*
+RESEARCH PROGRESS:
+
+Topics - React and Material UI 
+
+What I've learned about React & Material UI:
+React revolves around using "components" which can be easily manipulated and stacked,
+Instead of rendering .hbs files, I wil be rendering React comoponents.  
+React components resemble functions.
+Material UI can only be used in React 
+
+Next Steps:
+Refactor my directory:
+1) Change app.mjs to server.js 
+2) Change my views folder to a component folder
+3) Create a "contactForm.js"
+4)Learn more about JSX & Material UI
+*/
