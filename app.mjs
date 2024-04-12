@@ -28,11 +28,26 @@ app.set('view engine', 'hbs');
 app.set('views', path.join(__dirname, 'views')); 
 
 
-
-
-app.get('/', (req, res) => {
-  res.render('form');
+app.get('/', async (req, res) => {
+  const users = await User.find(); 
+  res.render('form', {users:JSON.stringify(users)});
 });
+
+app.post('/', async (req, res) => {
+  try {
+    const { name, email, message } = req.body;
+    const user = new User({ name, email, message });
+    await user.save(); // Save the user to the database
+    res.send('Thank you for your message!'); // Send a thank you response
+
+  } catch (error) {
+    res.status(500).send('ERROR');
+  }
+});
+
+app.listen(process.env.PORT ?? 3000);
+
+/*
 
 app.post('/sendemail', async (req, res) => {
   try {
@@ -45,19 +60,7 @@ app.post('/sendemail', async (req, res) => {
   }
 });
 
-app.get("/sendemail", async (req, res) => {
-    try {
-        const users = await User.find(); 
-        if (users.length === 0) {
-            // no entries found
-            return res.status(404).json({ message: 'No room join entries found' });
-        }
-        res.status(200).json(users);  // sends list of room join entries as JSON
-    } catch (error) {
-        console.error('Error retrieving room join entries:', error);
-        res.status(500).json({ message: 'Internal server error' });
-    }
-});
+\
 
 app.listen(process.env.PORT ?? 3000);
 
