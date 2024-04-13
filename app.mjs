@@ -48,7 +48,7 @@ app.post('/sendemail', async (req, res) => {
   }
 });
 
-app.get('/sendemail', async (req, res) => {
+app.get('/emails', async (req, res) => {
   const users = await User.find(); 
   res.send(JSON.stringify(users));
 });
