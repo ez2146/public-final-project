@@ -29,11 +29,14 @@ app.set('views', path.join(__dirname, 'views'));
 
 
 app.get('/', async (req, res) => {
-  const users = await User.find(); 
-  res.render('form', {users:JSON.stringify(users)});
+  //const users = await User.find(); 
+  res.render('form');
 });
 
-app.post('/', async (req, res) => {
+
+
+
+app.post('/sendemail', async (req, res) => {
   try {
     const { name, email, message } = req.body;
     const user = new User({ name, email, message });
@@ -44,6 +47,14 @@ app.post('/', async (req, res) => {
     res.status(500).send('ERROR');
   }
 });
+
+app.get('/sendemail', async (req, res) => {
+  const users = await User.find(); 
+  res.send(JSON.stringify(users));
+});
+
+
+
 
 app.listen(process.env.PORT ?? 3000);
 

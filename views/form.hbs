@@ -5,7 +5,7 @@
 </head>
 <body>
   <h1>Contact Me!</h1>
-  <form action="/" method="post">
+  <form action="/sendemail" method="post">
     <div>
       <label for="name">Name:</label>
       <input type="text" id="name" name="name" required>
@@ -20,10 +20,6 @@
     </div>
     <div>
       <button type="submit">Submit</button>
-    </div>
-    <div>
-      <h2>Previous Email Data from Database</h2>
-      <text>{{users}}</text>
     </div>
   </form>
 </body>
