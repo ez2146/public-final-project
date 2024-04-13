@@ -48,30 +48,13 @@ app.post('/sendemail', async (req, res) => {
   }
 });
 
-app.get('/sendemail', async (req, res) => {
+app.get('/emails', async (req, res) => {
   const users = await User.find(); 
   res.send(JSON.stringify(users));
 });
 
 
 
-
-app.listen(process.env.PORT ?? 3000);
-
-/*
-
-app.post('/sendemail', async (req, res) => {
-  try {
-    const { name, email, message } = req.body;
-    const user = new User({ name, email, message });
-    await user.save(); // Save the user to the database
-    res.send('Thank you for your message!'); // Send a thank you response
-  } catch (error) {
-    res.status(500).send('ERROR');
-  }
-});
-
-\
 
 app.listen(process.env.PORT ?? 3000);
 
@@ -94,5 +77,3 @@ Refactor my directory:
 4)Learn more about JSX & Material UI
 */
 
-//ez2146: linserv1.cims.nyu.edu... port 16711
-//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
