@@ -94,4 +94,9 @@ Refactor my directory:
 4)Learn more about JSX & Material UI
 */
 
+<<<<<<< HEAD
 
+=======
+//ez2146: linserv1.cims.nyu.edu... port 16711
+//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
+>>>>>>> 65b44bfde76c386d4975e242067818461fa9945a

@@ -22,7 +22,11 @@ An Example User:
 
 {
   name: "john smith",
+<<<<<<< HEAD
   email: "" 
+=======
+  email: "johnsmith@gmail.com" 
+>>>>>>> 65b44bfde76c386d4975e242067818461fa9945a
   message: "hello ethan"
 }
 
