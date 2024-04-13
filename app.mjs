@@ -29,7 +29,6 @@ app.set('views', path.join(__dirname, 'views'));
 
 
 app.get('/', async (req, res) => {
-  //const users = await User.find(); 
   res.render('form');
 });
 
