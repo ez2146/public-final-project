@@ -22,7 +22,7 @@ An Example User:
 
 {
   name: "john smith",
-  email: "johnsmith@gmail.com" 
+  email: "" 
   message: "hello ethan"
 }
 
