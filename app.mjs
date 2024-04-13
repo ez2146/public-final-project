@@ -58,22 +58,7 @@ app.get('/sendemail', async (req, res) => {
 
 app.listen(process.env.PORT ?? 3000);
 
-/*
 
-app.post('/sendemail', async (req, res) => {
-  try {
-    const { name, email, message } = req.body;
-    const user = new User({ name, email, message });
-    await user.save(); // Save the user to the database
-    res.send('Thank you for your message!'); // Send a thank you response
-  } catch (error) {
-    res.status(500).send('ERROR');
-  }
-});
-
-\
-
-app.listen(process.env.PORT ?? 3000);
 
 /*
 RESEARCH PROGRESS:
@@ -92,11 +77,5 @@ Refactor my directory:
 2) Change my views folder to a component folder
 3) Create a "contactForm.js"
 4)Learn more about JSX & Material UI
+
 */
-
-<<<<<<< HEAD
-
-=======
-//ez2146: linserv1.cims.nyu.edu... port 16711
-//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
->>>>>>> 65b44bfde76c386d4975e242067818461fa9945a
