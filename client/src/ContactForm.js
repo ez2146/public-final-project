@@ -21,6 +21,7 @@ const theme = createTheme({
           backgroundColor: '#2F2B34', 
           padding: '20px', 
           borderRadius: '15px',
+          margin: '20px 0',
         }
       }
     }
@@ -53,15 +54,17 @@ export default function ContactForm() {
     });
     const data = await response.text();
     alert(data); 
+    setFormData({ name: '', email: '', message: '' });
   };
 
   return (
     <ThemeProvider theme={theme}>
-      <Box style={{ height: '100vh', display: 'flex', justifyContent: 'center', alignItems: 'center', backgroundColor: '#DBD4D3' }}>
-        <Paper elevation={6}>
-          <Typography variant="h4" component="h1" gutterBottom>
-            Contact Me!
-          </Typography>
+
+  <Box maxWidth={600} mx="auto" my={2}>
+      <Paper elevation={6}>
+        <Typography variant="h4" component="h1" gutterBottom>
+          Contact Me!
+        </Typography>
           <form onSubmit={handleSubmit}>
             <TextField
               fullWidth
@@ -121,7 +124,7 @@ export default function ContactForm() {
             </Button>
           </form>
         </Paper>
-      </Box>
+        </Box>
     </ThemeProvider>
   );
 }

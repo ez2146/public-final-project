@@ -1,10 +1,9 @@
-// server.js (updated from app.mjs)
 import express from 'express';
 import path from 'path';
 import { fileURLToPath } from 'url';
 import 'dotenv/config';
 import bodyParser from 'body-parser';
-import { connectDB, User } from './db.mjs';
+import { connectDB, User, Song } from './db.mjs';
 
 const app = express();
 connectDB();
@@ -29,6 +28,19 @@ app.post('/sendemail', async (req, res) => {
     res.status(500).send('ERROR');
   }
 });
+
+
+app.post('/sendSong', async (req, res) => {
+  try {
+    const { title, artist } = req.body;
+    const favSong = new Song({ title, artist });
+    await favSong.save();
+    res.status(200).send('Song data received!');
+  } catch (error) {
+    res.status(500).send('Error submitting song data');
+  }
+});
+
 
 app.get('/emails', async (req, res) => {
   const users = await User.find();
