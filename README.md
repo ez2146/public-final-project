@@ -2,7 +2,7 @@
 
 ## Overview
 
-I am going to make a personal website. This site will have a homepage that describes me, images of my personal projects, as well as a mulitple forms and the ability to send me an email. 
+I am going to make a personal website. This site will have a homepage that describes me, images of my personal projects, as well as a mulitple forms and the ability to send me an email and a favorite song. 
 
 My forms will take the users name and email as well as a message form. Once they submit, I will store the user's name and email into my mongoDB database, and I will forward the message to my email (currently considering forwarding the email from my own address along with their information). This way users can send me a message without ever needing my email and simply by submitting the form. 
 
@@ -26,11 +26,21 @@ An Example User:
   message: "hello ethan"
 }
 
+An Example Song: 
+
+{
+  title: "Firework"
+  artist: "Katy Pery"
+}
+
 
 ## [Link to Commented First Draft Schema](db.mjs) 
 
 
 ## Wireframes
+
+***Quick Note - Since this was 1st made, I added the song form which will be below
+the Email form and have the same format. 
 
 ![Wireframe](images/wireframe.png)
 
