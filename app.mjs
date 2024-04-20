@@ -48,7 +48,11 @@ app.post('/sendemail', async (req, res) => {
   }
 });
 
+<<<<<<< HEAD
 app.get('/emails', async (req, res) => {
+=======
+app.get('/sendemail', async (req, res) => {
+>>>>>>> 23e7a527e00517acf381355fee2d8f663f2655dd
   const users = await User.find(); 
   res.send(JSON.stringify(users));
 });
@@ -57,7 +61,6 @@ app.get('/emails', async (req, res) => {
 
 
 app.listen(process.env.PORT ?? 3000);
-
 
 
 /*
@@ -77,5 +80,7 @@ Refactor my directory:
 2) Change my views folder to a component folder
 3) Create a "contactForm.js"
 4)Learn more about JSX & Material UI
-
 */
+
+//ez2146: linserv1.cims.nyu.edu... port 16711
+//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
