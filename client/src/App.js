@@ -4,6 +4,7 @@ import SongForm from './SongForm';
 import IntroSection from './IntroSection';
 import { CssBaseline, Container } from '@mui/material';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
+import PasswordGeneratorForm from './PasswordGeneratorForm';
 
 const theme = createTheme({
   palette: {
@@ -20,13 +21,15 @@ function App() {
   return (
     <ThemeProvider theme={theme}>
       <CssBaseline />
-      <IntroSection /> 
+      <IntroSection />
       <Container component="main" maxWidth="sm">
         <ContactForm />
         <SongForm />
+        <PasswordGeneratorForm />
       </Container>
     </ThemeProvider>
   );
 }
+
 
 export default App;
