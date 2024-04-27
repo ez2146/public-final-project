@@ -4,6 +4,7 @@ import { fileURLToPath } from 'url';
 import 'dotenv/config';
 import bodyParser from 'body-parser';
 import { connectDB, User, Song } from './db.mjs';
+import generatePassword from 'generate-password';
 
 const app = express();
 connectDB();
@@ -38,6 +39,31 @@ app.post('/sendSong', async (req, res) => {
     res.status(200).send('Song data received!');
   } catch (error) {
     res.status(500).send('Error submitting song data');
+  }
+});
+
+
+app.post('/generatePassword', (req, res) => {
+  try {
+    let password = generatePassword.generate({
+      length: 12,
+      numbers: true,
+      symbols: false,
+      uppercase: true,
+      lowercase: true,
+      strict: true
+    });
+
+    //use map to shuffle the characters in password
+    password = password.split('').map((_, i, arr) => arr[Math.floor(Math.random() * arr.length)]).join('');
+
+    // Filter remove all vowels
+    let vowels = ['a', 'e', 'i', 'o', 'u', 'A', 'E', 'I', 'O', 'U'];
+    password = password.split('').filter(char => !vowels.includes(char)).join('');
+
+    res.status(200).json({ password });
+  } catch (error) {
+    res.status(500).json({ error: 'Error generating password' });
   }
 });
 
