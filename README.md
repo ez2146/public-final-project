@@ -2,7 +2,7 @@
 
 ## Overview
 
-I am going to make a personal website. This site will have a homepage that describes me, images of my personal projects, as well as a mulitple forms and the ability to send me an email and a favorite song. 
+I am going to make a personal website. This site will have a homepage that describes me, images of my personal projects, as well as a mulitple forms and the ability to send me an email and a favorite song and generate a password. 
 
 My forms will take the users name and email as well as a message form. Once they submit, I will store the user's name and email into my mongoDB database, and I will forward the message to my email (currently considering forwarding the email from my own address along with their information). This way users can send me a message without ever needing my email and simply by submitting the form. 
 
@@ -22,15 +22,7 @@ An Example User:
 
 {
   name: "john smith",
-<<<<<<< HEAD
-<<<<<<< HEAD
-  email: "" 
-=======
   email: "johnsmith@gmail.com" 
->>>>>>> 65b44bfde76c386d4975e242067818461fa9945a
-=======
-  email: "johnsmith@gmail.com" 
->>>>>>> 23e7a527e00517acf381355fee2d8f663f2655dd
   message: "hello ethan"
 }
 
@@ -47,8 +39,6 @@ An Example Song:
 
 ## Wireframes
 
-***Quick Note - Since this was 1st made, I added the song form which will be below
-the Email form and have the same format. 
 
 ![Wireframe](images/wireframe.png)
 
@@ -68,15 +58,23 @@ the Email form and have the same format.
 
 (__TODO__: the research topics that you're planning on working on along with their point values... and the total points of research topics listed)
 
-* (5 points) React
+* (6 points) React
     * Use React as the Front-end framework
-* (3 points) Material UI React Framework
+* (2 points) Material UI React Framework
     * Use Material UI to generate components and animate
+* (2 points) npm generate-password library
+    * User generate-password to allow user to make a unique password
 
-## [Link to Initial Main Project File](app.mjs) 
+## [Link to Initial Main Project File](server.mjs) 
 
 
 ## Annotations / References Used
+
+Links:
+* https://www.npmjs.com/package/generate-password
+* https://mui.com/material-ui/
+* https://react.dev/reference/react
+
 
 
 
